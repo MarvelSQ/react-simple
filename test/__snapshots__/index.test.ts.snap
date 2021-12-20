@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple let state 1`] = `
+"function App() {
+  const [state, setState] = 1;
+  const [enable, setEnable] = true;
+  const handleAdd = useCallback(() => {
+    const enable = false;
+    enable = !enable;
+    setState(state + 1);
+  }, [state]);
+  return /*#__PURE__*/React.createElement(\\"div\\", {
+    onClick: handleAdd
+  }, state);
+}"
+`;

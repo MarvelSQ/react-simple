@@ -24,6 +24,7 @@
   "homepage": "https://github.com/MarvelSQ/template#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.0",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
@@ -51,5 +52,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.16.5"
+  }
 }
