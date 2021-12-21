@@ -1,25 +1,12 @@
-import * as babel from '@babel/core';
+import path from 'path';
 import ReactSimple from '../src';
+import pluginTester from 'babel-plugin-tester';
 
-const simpleCode = `
-function App() {
-  let state = 1;
-  let enable = true;
-  function handleAdd() {
-    const enable = false;
-    enable = !enable;
-    state = state + 1;
-  }
-  return <div onClick={handleAdd}>{state}</div>;
-}`;
-
-describe('simple', () => {
-  test('let state', () => {
-    const result = babel.transformSync(simpleCode, {
-      presets: ['@babel/preset-react'],
-      plugins: [ReactSimple],
-    });
-
-    expect(result?.code).toMatchSnapshot();
-  });
+pluginTester({
+  plugin: ReactSimple,
+  pluginName: 'react-simple',
+  babelOptions: {
+    presets: ['@babel/preset-react'],
+  },
+  fixtures: path.join(__dirname, '__fixtures__'),
 });
