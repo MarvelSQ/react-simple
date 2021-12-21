@@ -71,6 +71,7 @@ export default {
         return;
       }
 
+      // transform state to useState
       traverse(
         path.node,
         {
@@ -92,6 +93,16 @@ export default {
               varPath.replaceWith(declaration);
             }
           },
+        },
+        path.scope,
+        state,
+        path
+      );
+
+      // transform function to useCallback
+      traverse(
+        path.node,
+        {
           FunctionDeclaration(funcPath) {
             if (funcPath.parent === path.node.body) {
               funcPath.replaceWith(callUseCallback(funcPath));
