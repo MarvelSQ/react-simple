@@ -13,7 +13,9 @@ function callUseState(declarator: t.VariableDeclarator) {
     };
     return t.variableDeclarator(
       t.arrayPattern([t.identifier(idName), t.identifier(changeName)]),
-      declarator.init
+      t.callExpression(t.identifier('useState'), [
+        declarator.init as t.Expression,
+      ])
     );
   }
   return declarator;
