@@ -1,4 +1,5 @@
-import { NodePath, types as t } from '@babel/core';
+import type { NodePath } from '@babel/traverse';
+import * as t from '@babel/types';
 
 function convertStateNameToSetState(name: string): string {
   return `set${name.charAt(0).toUpperCase()}${name.slice(1)}`;
