@@ -28,7 +28,7 @@ export function processCallback(
 
   if (
     t.isArrowFunctionExpression(path) &&
-    path.parentPath.parentPath?.parentPath !== componentPath
+    path.parentPath.parentPath?.parentPath?.parentPath !== componentPath
   ) {
     return;
   }
