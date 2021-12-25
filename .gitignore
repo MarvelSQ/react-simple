@@ -4,3 +4,6 @@ node_modules
 .eslintcache
 # test
 coverage
+# build
+docs/dist/out.css
+docs/dist/out.js
