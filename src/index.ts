@@ -1,5 +1,5 @@
-import { types as t, Visitor } from '@babel/core';
-import traverse from '@babel/traverse';
+import traverse, { Visitor } from '@babel/traverse';
+import * as t from '@babel/types';
 import { processCallback } from './transform/useCallback';
 import { processIdentifier } from './transform/useState';
 

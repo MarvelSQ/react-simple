@@ -1,4 +1,5 @@
-import { NodePath, traverse, types as t } from '@babel/core';
+import traverse, { NodePath } from '@babel/traverse';
+import * as t from '@babel/types';
 
 function isInsidePath(path: NodePath<t.Identifier>, parentPath: NodePath) {
   const binding = path.scope.getBinding(path.node.name);
