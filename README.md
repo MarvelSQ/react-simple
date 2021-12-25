@@ -43,3 +43,23 @@ function App(){
 ```
 
 make react simple
+
+# Guide
+
+react-simple is a babel plugin for making react develop easier.
+
+by automaticly convert you unwraped `state`, `callback` to `useState`, `useCallback`
+
+## useState
+
+to make `useState` transform work, make sure you reassigned the state.
+
+like this
+
+```jsx
+let state = 0; // this line will convert to useState
+let name = 'test'; // this won't change
+function handleChanage(val) {
+  state = val; // this line will convert to setState
+}
+```
