@@ -1,15 +1,22 @@
 import traverse, { NodePath } from '@babel/traverse';
 import * as t from '@babel/types';
 
-function isInsidePath(path: NodePath<t.Identifier>, parentPath: NodePath) {
+function isDefinedBetween(
+  path: NodePath<t.Identifier>,
+  parentPath: NodePath,
+  finalPath: NodePath
+) {
   const binding = path.scope.getBinding(path.node.name);
   if (!binding) {
     return false;
   }
   let currentPath: NodePath | null = binding.path;
   while (currentPath) {
-    if (currentPath === parentPath) {
+    if (currentPath === finalPath) {
       return true;
+    }
+    if (currentPath === parentPath) {
+      return false;
     }
     currentPath = currentPath.parentPath;
   }
@@ -49,10 +56,9 @@ export function processCallback(
         ) {
           return;
         }
-        if (isInsidePath(identifierPath, path)) {
-          return;
+        if (isDefinedBetween(identifierPath, path, componentPath)) {
+          deps.add(identifierPath.node.name);
         }
-        deps.add(identifierPath.node.name);
       },
     },
     path.scope,
