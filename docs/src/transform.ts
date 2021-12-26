@@ -10,17 +10,9 @@ export function transform(code: string) {
 
   traverse(ast, simple.visitor);
 
-  const out = generator(
-    ast,
-    {
-      retainLines: true,
-      comments: true,
-      compact: false,
-      concise: false,
-      retainFunctionParens: true,
-    },
-    code
-  );
+  const out = generator(ast, {
+    retainLines: true,
+  });
 
   return out;
 }

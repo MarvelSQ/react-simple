@@ -65,6 +65,34 @@
     <div bind:this={outputContainer} />
   </div>
 </div>
+<div class="footer">
+  <p class="prowerd-by">powered by</p>
+  <div class="base-info">
+    <a
+      href="https://esbuild.github.io/"
+      style="text-decoration: none"
+      target="_blank"
+    >
+      <img
+        src="esbuild-logo.svg"
+        alt="esbuild"
+        height="40"
+        style="vertical-align:middle"
+      />
+      <span
+        style="font-weight:bold;font-size:24px;color:black;vertical-align:middle;padding-left:4px;"
+      >
+        esbuild
+      </span>
+    </a>
+    <a href="https://svelte.dev/" target="_blank">
+      <img src="svelte-logo.svg" alt="svelte" height="50" />
+    </a>
+    <a href="https://codemirror.net/" target="_blank">
+      <img src="codemirror-logo.svg" alt="codemirror" height="80" />
+    </a>
+  </div>
+</div>
 
 <style>
   .title {
@@ -95,5 +123,26 @@
     font-size: 18px;
     padding: 10px;
     margin: 0;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+
+  .prowerd-by {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+  .base-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

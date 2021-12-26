@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/MarvelSQ/react-simple/actions/workflows/CI.yml/badge.svg)
 
+## [playground](https://react-simple-marvelsq.vercel.app)
+
 ```jsx
 function App() {
   let age = 1;
