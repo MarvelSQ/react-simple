@@ -46,6 +46,7 @@ export function getStateCallback(
         };
 
         const declaration = t.variableDeclaration('const', [declarator]);
+        declaration.loc = path.parentPath.node.loc;
         path.parentPath.replaceWith(declaration);
         return setStateName;
       }

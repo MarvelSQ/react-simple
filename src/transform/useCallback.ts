@@ -71,11 +71,11 @@ export function processCallback(
   ]);
 
   if (t.isFunctionDeclaration(path.node)) {
-    path.replaceWith(
-      t.variableDeclaration('const', [
-        t.variableDeclarator(path.node.id as t.Identifier, init),
-      ])
-    );
+    const declaration = t.variableDeclaration('const', [
+      t.variableDeclarator(path.node.id as t.Identifier, init),
+    ]);
+    declaration.loc = path.node.loc;
+    path.replaceWith(declaration);
   } else {
     path.replaceWith(init);
   }
