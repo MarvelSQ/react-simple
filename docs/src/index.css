@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+.title {
+  flex-shrink: 0;
+}
+
+.container {
+  flex-grow: 1;
+  overflow: auto;
+  margin: 10px;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-grow: 0;
+    overflow: unset;
+  }
+}
