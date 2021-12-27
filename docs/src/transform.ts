@@ -3,12 +3,14 @@ import generator from '@babel/generator';
 import traverse from '@babel/traverse';
 import simple from '../../src/index';
 
-export function transform(code: string) {
+export function transform(code: string, options: any = {}) {
   const ast = parser.parse(code, {
     plugins: ['jsx', 'typescript'],
   });
 
-  traverse(ast, simple.visitor);
+  const result = simple({}, options, 'test');
+
+  traverse(ast, result.visitor);
 
   const out = generator(ast, {
     retainLines: true,
