@@ -20,14 +20,37 @@
 }
 `;
 
+  let enableUseCallback = true;
+
   let output = transform(code).code;
 
-  function handleChange(code) {
-    output = transform(code).code;
+  function update() {
+    output = transform(code, {
+      useCallback: enableUseCallback,
+    }).code;
+  }
+
+  function handleChange(nextCode) {
+    code = nextCode;
+    update();
+  }
+
+  function toggleUseCallback() {
+    enableUseCallback = !enableUseCallback;
+    update();
   }
 </script>
 
 <Title />
+<div style="text-align: center;color: #888;">
+  <input
+    type="checkbox"
+    id="useCallback-enable"
+    checked={enableUseCallback}
+    on:change={toggleUseCallback}
+  />
+  <label for="useCallback-enable">convert function to useCallback</label>
+</div>
 <div class="container">
   <div class="editor-cell">
     <p class="editor-title">Source Code</p>
@@ -59,7 +82,10 @@
   .editor-title {
     font-size: 18px;
     padding: 10px;
+    padding-left: 30px;
     margin: 0;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #aaa;
   }
 
   @media screen and (max-width: 600px) {
