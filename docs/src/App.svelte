@@ -54,7 +54,7 @@
 <div class="container">
   <div class="editor-cell">
     <p class="editor-title">Source Code</p>
-    <Editor value={code} onChange={handleChange} />
+    <Editor defaultValue={code} onChange={handleChange} />
   </div>
   <div class="editor-cell">
     <p class="editor-title">Result</p>

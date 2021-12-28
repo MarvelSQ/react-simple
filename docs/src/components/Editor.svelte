@@ -7,6 +7,7 @@
   import 'codemirror/theme/idea.css';
 
   export let value;
+  export let defaultValue;
   export let onChange;
   export let readonly;
   let container;
@@ -21,7 +22,7 @@
       theme: 'idea',
     };
     editor = new CodeMirror(container, {
-      value,
+      value: value || defaultValue,
       ...baseOption,
       readOnly: readonly,
     });
@@ -33,7 +34,7 @@
   });
 
   beforeUpdate(() => {
-    if (editor) {
+    if (editor && value) {
       editor.setValue(value);
     }
   });
