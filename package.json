@@ -2,7 +2,12 @@
   "name": "template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "jest --coverage",
     "lint:prettier": "prettier 'src/**/*.{js,ts,tsx}' --check --ignore-unknown",
