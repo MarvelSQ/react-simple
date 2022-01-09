@@ -1,5 +1,7 @@
 name: Publish Package to npmjs
 on:
+  push:
+    branches: [master, next]
   release:
     types: [created]
 jobs:
