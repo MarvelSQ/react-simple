@@ -11,6 +11,7 @@
     "docs:build": "NODE_ENV=production node docs/scripts/build",
     "docs:serve": "NODE_ENV=development node docs/scripts/build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "build": "tsc src/*.ts --outDir lib",
     "prepare": "husky install"
   },
   "repository": {
