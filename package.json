@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarvelSQ/template.git"
+    "url": "git+https://github.com/MarvelSQ/react-simple.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MarvelSQ/template/issues"
+    "url": "https://github.com/MarvelSQ/react-simple/issues"
   },
-  "homepage": "https://github.com/MarvelSQ/template#readme",
+  "homepage": "https://github.com/MarvelSQ/react-simple#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.5",
