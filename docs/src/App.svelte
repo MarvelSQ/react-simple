@@ -41,6 +41,13 @@
   }
 </script>
 
+<div class="banner">
+  <span class="focus">Signal</span>
+  maybe a better choice than compile code while building.
+  <a target="_blank" href="https://www.youtube.com/watch?v=O6xtMrDEhcE">
+    click watch video on youtube
+  </a>
+</div>
 <Title />
 <div style="text-align: center;color: #888;">
   <input
@@ -64,6 +71,17 @@
 <Footer />
 
 <style>
+  .banner {
+    background-color: #e7b324;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .focus {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
   .container {
     display: flex;
     flex-direction: row;
